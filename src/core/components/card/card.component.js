@@ -10,8 +10,10 @@ const CardComponent = (props) => {
     return (
         <div className='card-wrapper'>
             <img src={image} className="card-image" alt='No_Image' />
-            <div className='card-name'>{name}</div>
-            <div className='card-price'>{price}</div>
+            <div className='card-short-details'>
+                <div className='card-name'>{name}</div>
+                <div className='card-price'>{price}</div>
+            </div>
         </div>
     );
 };

@@ -4,8 +4,12 @@
     // height: 90vh;
     position: relative;
     padding: 35px;
-    margin-top: 10vh;
-    padding-bottom: unset;
+    padding-top: unset;
+
+    overflow-y: auto;
+    // margin-top: 10vh;
+    // padding-bottom: unset;
+
     // background-image: linear-gradient(to bottom, #1a1919, #f7f0f0);
 
     .body-border-component {
