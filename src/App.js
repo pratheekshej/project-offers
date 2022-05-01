@@ -8,13 +8,13 @@ import PageLoaderComponent from './core/components/page-loader/page-loader.compo
 const Home = lazy(() => import('./routes/home/home.component'));
 const Main = lazy(() => import('./routes/main/main.component'));
 
-const App = () => {
+const App = (props) => {
   return (
     <Fragment>
       <Suspense fallback={<PageLoaderComponent loading={true} />}>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<Home {...props} />} />
         </Routes>
       </Suspense>
       <PageLoaderComponent />

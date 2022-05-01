@@ -6,7 +6,7 @@ import './grid-block.styles.scss';
 const GridBlockComponent = (props) => {
     const {
         gridData = [],
-        gridTitle = 'Offers List for cars'
+        gridTitle = 'Offers for special brands'
     } = props;
 
     return (
@@ -15,7 +15,7 @@ const GridBlockComponent = (props) => {
             <div className='grid-block-container'>
                 {
                     gridData.map(data => {
-                        return <CardComponent {...data} />
+                        return <CardComponent key={data?.name} {...data} />
                     })
                 }
             </div>

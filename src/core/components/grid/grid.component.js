@@ -24,7 +24,8 @@ const Grid = (props) => {
                             images: data?.splashImages ? data?.splashImages : [],
                             image: data?.carGroupInfo?.modelExample?.imageUrl, // data?.splashImages ? data?.splashImages[0]?.url : 'No data',
                             name: data?.carGroupInfo?.modelExample?.name, // data?.['description'],
-                            price: `${data['prices']['totalPrice']['amount']['currency']} ${data['prices']['totalPrice']['amount']['value']}`
+                            price: `${data['prices']['totalPrice']['amount']['currency']} ${data['prices']['totalPrice']['amount']['value']}`,
+                            ...data
                         };
                         tableData.push(obj);
                     });
