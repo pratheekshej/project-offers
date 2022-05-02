@@ -5,8 +5,6 @@ import './body.styles.scss';
 const Body = (props) => {
     return (
         <div className="body-container">
-            {/* <div className="body-border-component">
-            </div> */}
             <Offers />
         </div>
     );

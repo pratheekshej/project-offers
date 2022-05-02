@@ -2,10 +2,10 @@ import React, { Fragment } from 'react';
 import Body from '../../core/components/body/body.component';
 import Header from '../../core/components/header/header.component';
 
-const Home = (props) => {
+const Home = () => {
     return (
         <Fragment>
-            <Header {...props} />
+            <Header />
             <Body />
         </Fragment>
     );

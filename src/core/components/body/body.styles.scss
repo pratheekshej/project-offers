@@ -1,23 +1,8 @@
 .body-container {
     width: 100%;
     height: 100%;
-    // height: 90vh;
     position: relative;
     padding: 35px;
     padding-top: unset;
-
     overflow-y: auto;
-    // margin-top: 10vh;
-    // padding-bottom: unset;
-
-    // background-image: linear-gradient(to bottom, #1a1919, #f7f0f0);
-
-    .body-border-component {
-        width: 100%;
-        min-height: 92.75%;
-        // border: 20px solid #ee700a;
-        box-shadow: 0 0 0 8px #ee700a;
-        border-radius: 10px;
-        border-bottom: none;
-    }
 }

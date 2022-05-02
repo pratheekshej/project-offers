@@ -15,7 +15,11 @@ const GridBlockComponent = (props) => {
             <div className='grid-block-container'>
                 {
                     gridData.map(data => {
-                        return <CardComponent key={data?.name} {...data} />
+                        return (
+                            <Fragment key={data?.name}>
+                                <CardComponent {...data} />
+                            </Fragment>
+                        );
                     })
                 }
             </div>

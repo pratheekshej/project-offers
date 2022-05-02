@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { gridData } from '../../../core/components/grid/grid-data/grid-data';
 import Grid from '../../../core/components/grid/grid.component';
@@ -26,12 +26,7 @@ const Offers = () => {
             });
     }, []);
 
-    return (
-        <Fragment>
-            <div className='offers-container-title'></div>
-            <Grid gridTitle="Offers List" gridType='grid-block' dataList={offerList} />
-        </Fragment>
-    );
+    return <Grid gridTitle="Offers List" gridType='grid-block' dataList={offerList} />;
 };
 
 export default Offers;

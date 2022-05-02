@@ -4,3 +4,15 @@
     align-items: $align;
     justify-content: $justify;
 }
+
+@mixin flex-align($direction, $align) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+}
+
+@mixin flex-justify($direction, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
