@@ -26,6 +26,8 @@ const Grid = (props) => {
                     setGridDataList(dataList);
                     break;
             }
+        } else if (dataList == null) {
+            throw new Error('Data list is NULL!!!');
         }
     }, [dataList]);
 
