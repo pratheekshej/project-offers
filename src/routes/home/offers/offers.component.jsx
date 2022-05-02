@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { gridData } from '../../../core/components/grid/grid-data/grid-data';
 import Grid from '../../../core/components/grid/grid.component';
+import { APP_APIS } from '../../../core/services/app-apis';
 import { setPageLoader } from '../../../redux/app/app.actions';
 import './offers.styles.scss';
 
@@ -13,14 +14,14 @@ const Offers = () => {
 
     useEffect(() => {
         dispatch(setPageLoader(true));
-        fetch("http://cdn.sixt.io/codingtask/offers.json")
+        fetch(APP_APIS.OFFERS)
             .then((res) => res.json())
             .then((json) => {
                 let { offers } = json;
                 setOfferList(offers);
                 dispatch(setPageLoader(false));
             }).catch(err => {
-                let { offers } = gridData['offerData'];
+                let { offers } = gridData?.offerData;
                 setOfferList(offers);
                 dispatch(setPageLoader(false));
             });

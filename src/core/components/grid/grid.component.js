@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from "react";
-import GridBlockComponent from "./grid-types/grid-block/grid-block.component";
-import TableComponent from "./grid-types/table/table.component";
+import React, { Fragment, useEffect, useState } from "react";
+import { APP_SER } from "../../services/data-serializer";
+import CardComponent from "../card/card.component";
 import './grid.styles.scss';
 
 const Grid = (props) => {
     const {
         gridVal = 'offers',
-        gridType = 'table',
+        gridTitle = 'Offers for special brands',
         dataList = []
     } = props;
 
@@ -19,16 +19,7 @@ const Grid = (props) => {
             switch (gridVal) {
                 case 'offers':
                     let tableData = [];
-                    dataList.forEach(data => {
-                        const obj = {
-                            images: data?.splashImages ? data?.splashImages : [],
-                            image: data?.carGroupInfo?.modelExample?.imageUrl, // data?.splashImages ? data?.splashImages[0]?.url : 'No data',
-                            name: data?.carGroupInfo?.modelExample?.name, // data?.['description'],
-                            price: `${data['prices']['totalPrice']['amount']['currency']} ${data['prices']['totalPrice']['amount']['value']}`,
-                            ...data
-                        };
-                        tableData.push(obj);
-                    });
+                    tableData = dataList.map(data => APP_SER.OFFER(data));
                     setGridDataList(tableData);
                     break;
                 default:
@@ -40,14 +31,18 @@ const Grid = (props) => {
 
     return (
         <div className="grid-container">
-            {(() => {
-                switch (gridType) {
-                    case 'grid-block':
-                        return <GridBlockComponent gridData={gridDataList} />
-                    default:
-                        return <TableComponent gridVal={gridVal} gridDataList={gridDataList} />
+            <div className='grid-container-title'>{gridTitle}</div>
+            <div className='grid-container-block'>
+                {
+                    gridDataList.map(data => {
+                        return (
+                            <Fragment key={data?.name}>
+                                <CardComponent {...data} />
+                            </Fragment>
+                        );
+                    })
                 }
-            })()}
+            </div>
         </div>
     );
 };

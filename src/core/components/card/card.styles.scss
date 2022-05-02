@@ -1,15 +1,11 @@
+@use "../../styles/mixins";
+
 .card-wrapper {
     height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-
+    @include mixins.flex-disp(column, flex-start, flex-start);
     box-shadow: 0 4px 8px 0 #00000033;
     transition: 0.3s;
-
     border-radius: 5px;
-
     cursor: pointer;
 
     &:hover {
@@ -24,12 +20,8 @@
     }
 
     .card-short-details {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
+        @include mixins.flex-align(column, flex-start);
         padding: 10px;
-
         font-size: 18px;
 
         .card-name {
