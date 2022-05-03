@@ -33,12 +33,12 @@ const Grid = (props) => {
 
     return (
         <div className="grid-container">
-            <div className='grid-container-title'>{gridTitle}</div>
-            <div className='grid-container-block'>
+            <div className='grid-container-title' data-testid="grid-title">{gridTitle}</div>
+            <div className='grid-container-block' data-testid="grid-data-content">
                 {
                     gridDataList.map(data => {
                         return (
-                            <Fragment key={data?.name}>
+                            <Fragment key={data?.id}>
                                 <CardComponent {...data} />
                             </Fragment>
                         );

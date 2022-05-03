@@ -30,7 +30,7 @@ const Offers = () => {
         });
     }, []);
 
-    // UNCOMMENT : (To see the results if the offers API call throws error)
+    // UNCOMMENT : (To see the results if the offers API call throws error in the above defined hook)
     /* useEffect(() => {
         let { offers } = APP_APIS.OFFERS_JSON;
         setOfferList(offers);
@@ -39,7 +39,6 @@ const Offers = () => {
     return (
         <Grid
             gridTitle="Offers for special brands"
-            gridType="grid-block"
             dataList={offerList} />
     );
 };

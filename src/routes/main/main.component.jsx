@@ -7,7 +7,9 @@ const Main = () => {
         <div className="App">
             <div className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <Link className="App-link" to={"/home"}>view offers</Link>
+                <Link data-testid="app-redirection" className="App-link" to={"/home"}>
+                    view offers
+                </Link>
             </div>
         </div>
     );

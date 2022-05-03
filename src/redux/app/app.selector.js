@@ -9,5 +9,5 @@ export const getOfferList = createSelector(
 
 export const getPageLoader = createSelector(
     [appState],
-    (app) => app.pageLoader
+    (app) => app.pageLoader ? app.pageLoader : false
 );
