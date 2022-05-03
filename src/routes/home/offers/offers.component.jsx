@@ -38,7 +38,7 @@ const Offers = () => {
 
     return (
         <Grid
-            gridTitle="Offers for special brands"
+            gridTitle="SPECIAL BRAND OFFERS"
             dataList={offerList} />
     );
 };

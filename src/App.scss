@@ -20,7 +20,6 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  border-radius: 0px;
   background-color: #9d9fa1;
 }
 
@@ -29,16 +28,31 @@
 }
 
 .App-logo {
-  height: 25vmin;
+  height: 100%;
+  width: 100%;
   pointer-events: none;
 }
 
 .App-header {
-  background-image: linear-gradient(to left, #020202, #3a3636);
+  background: #7c7c7c;
+  background: linear-gradient(90deg, #7c7c7c 0%, #2e3e44 40%, #0b0b0b 98%);
   min-height: 100vh;
   @include mixins.flex-disp(column, center, center);
   font-size: calc(10px + 2vmin);
   color: white;
+
+  .logo-wrapper {
+    width: 40vmin;
+    height: 40vmin;
+    cursor: pointer;
+    transition: transform 1s;
+
+    &:hover {
+      -ms-transform: scale(1.075); /* IE 9 */
+      -webkit-transform: scale(1.075); /* Safari 3-8 */
+      transform: scale(1.075);
+    }
+  }
 }
 
 .App-link {
