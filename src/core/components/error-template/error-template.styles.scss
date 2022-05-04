@@ -12,4 +12,19 @@
         height: 100px;
         width: 100px;
     }
+
+    .error-content {
+        @include mixins.flex-disp(column, flex-start, flex-start);
+        background-color: #e0e0e0;
+        width: 75%;
+        padding: 20px;
+        border-radius: 5px;
+        max-height: 275px;
+        overflow-y: auto;
+
+        .message {
+            color: rgb(126, 36, 36);
+            font-weight: 600;
+        }
+    }
 }
