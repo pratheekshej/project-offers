@@ -13,6 +13,8 @@ const errorHandler = (error, errorInfo) => {
 
 const App = () => {
   return (
+    /* ErrorBoundary taken from the package react-error-boundary provides all the tools
+       that are needed to declaratively handle runtime errors in the App. */
     <ErrorBoundary FallbackComponent={ErrorTemplateComponent} onError={errorHandler}>
       <Router>
         <Routes>

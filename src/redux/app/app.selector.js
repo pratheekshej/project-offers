@@ -1,3 +1,7 @@
+/**
+ * createSelector accepts one or more "input" selectors, which extract values from arguments,
+ * and an "output" selector that receives the extracted values and should return a derived value.
+ */
 import { createSelector } from "reselect";
 
 const appState = (state) => state.app;

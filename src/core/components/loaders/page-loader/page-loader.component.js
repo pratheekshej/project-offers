@@ -21,6 +21,10 @@ const PageLoader = ({ loading }) => {
     );
 }
 
+/**
+ * createStructuredSelector from Reselect offers a performance enhancement
+ * as it provides a way to create selectors that are memoized and only recompute when their inputs have changed.
+ */
 const mapStateToProps = createStructuredSelector({
     loading: getPageLoader
 });
