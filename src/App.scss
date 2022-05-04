@@ -34,7 +34,6 @@
 }
 
 .App-header {
-  background: #7c7c7c;
   background: linear-gradient(90deg, #7c7c7c 0%, #2e3e44 40%, #0b0b0b 98%);
   min-height: 100vh;
   @include mixins.flex-disp(column, center, center);

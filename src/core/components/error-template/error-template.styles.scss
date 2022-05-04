@@ -2,13 +2,14 @@
 
 .error-container {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     @include mixins.flex-disp(column, center, center);
     padding: 5%;
+    background: radial-gradient(circle, #fbfbfb 0%, #bababa 40%, #424242 98%);
+    color: #636060;
 
     .warning {
         height: 100px;
         width: 100px;
-        margin-bottom: 1.5%;
     }
 }
