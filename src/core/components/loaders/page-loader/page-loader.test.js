@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { store } from "../../../redux/store.redux";
+import { store } from "../../../../redux/store.redux";
 import PageLoaderComponent from "./page-loader.component";
 
 describe("Loader Component", () => {

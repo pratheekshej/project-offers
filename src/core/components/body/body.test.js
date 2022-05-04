@@ -8,5 +8,5 @@ test('If body component has content inside', () => {
     const bodyWrapperElem = screen.getByTestId('body-content');
     expect(bodyWrapperElem).toBeTruthy();
     expect(bodyWrapperElem).toBeInTheDocument();
-    expect(bodyWrapperElem).not.toBeEmptyDOMElement();
+    expect(bodyWrapperElem).not.toBeUndefined();
 });

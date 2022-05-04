@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, Fragment } from 'react';
 import './card.styles.scss';
-import placeholderImg from '../../../assets/c-wire-1.jpg';
+import fallBackImg from '../../../assets/c-wire-1.jpg';
+import InLoader from '../loaders/component-loader/component-loader.component';
 
 const CardComponent = (props) => {
     const {
@@ -10,28 +11,36 @@ const CardComponent = (props) => {
         price
     } = props;
 
+    const [imgLoaded, setImgLoaded] = useState(false);
+
     const defaultImg = (
         <img
             data-testid={`default-img-${id}`}
             id={id}
-            src={placeholderImg}
+            src={fallBackImg}
             className="card-image"
             alt='No_Image' />
     );
 
     const imageRenderer = () => {
         if (image) {
+            const imageStyle = !imgLoaded ? { display: "none" } : {};
             return (
-                <img
-                    data-testid={`original-img-${id}`}
-                    id={id}
-                    src={image}
-                    className="card-image"
-                    alt='No_Image'
-                    onError={({ currentTarget }) => {
-                        currentTarget.onerror = null;
-                        currentTarget.src = placeholderImg;
-                    }} />
+                <Fragment>
+                    {!imgLoaded && <InLoader loaderText="Loading image..." />}
+                    <img
+                        data-testid={`original-img-${id}`}
+                        id={id}
+                        src={image}
+                        style={imageStyle}
+                        className="card-image"
+                        alt='No_Image'
+                        onLoad={() => setImgLoaded(true)}
+                        onError={({ currentTarget }) => {
+                            currentTarget.onerror = null;
+                            currentTarget.src = fallBackImg;
+                        }} />
+                </Fragment>
             );
         }
         return defaultImg;

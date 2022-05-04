@@ -1,11 +1,10 @@
 import React from "react";
-import Offers from "../../../routes/home/offers/offers.component";
 import './body.styles.scss';
 
-const Body = () => {
+const Body = (props) => {
     return (
         <div className="body-container" data-testid="body-content">
-            <Offers />
+            {props.children}
         </div>
     );
 }

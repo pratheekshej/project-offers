@@ -1,0 +1,16 @@
+.in-loader {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    width: 100%;
+    background: linear-gradient(45deg, #cccccc, transparent);
+    border-radius: 5px;
+
+    &-icon {
+        background: url("../../../../assets/loaders/dual-ring-loader.svg") no-repeat;
+        height: 42px;
+        width: 45px;
+    }
+}

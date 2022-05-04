@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from './redux/store.redux';
-import PageLoaderComponent from './core/components/page-loader/page-loader.component';
+import PageLoaderComponent from './core/components/loaders/page-loader/page-loader.component';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
