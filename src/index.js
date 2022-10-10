@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -7,13 +8,19 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from './redux/store.redux';
 import PageLoaderComponent from './core/components/loaders/page-loader/page-loader.component';
+import PageLoaderWithHooks from './core/components/loaders/page-loader-with-hooks/page-loader-with-hooks.component';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
 root.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <App />
-      <PageLoaderComponent />
+      <Router>
+        <App />
+      </Router>
+      {/* <PageLoaderComponent /> */}
+      <PageLoaderWithHooks />
     </PersistGate>
   </Provider>
 );

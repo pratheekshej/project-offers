@@ -1,0 +1,14 @@
+@use "../../../styles/mixins";
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    @include mixins.flex-disp(row, center, center);
+    height: 100%;
+    width: 100%;
+    z-index: 8;
+
+    .loader {
+        z-index: 6;
+    }
+}

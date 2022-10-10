@@ -15,3 +15,7 @@ export const getPageLoader = createSelector(
     [appState],
     (app) => app.pageLoader ? app.pageLoader : false
 );
+
+export const pageLoader = (state) => {
+    return (state?.app?.pageLoader) ? state?.app?.pageLoader : false
+}

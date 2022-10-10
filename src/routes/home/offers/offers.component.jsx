@@ -15,19 +15,20 @@ const Offers = () => {
 
     useEffect(() => {
         dispatch(setPageLoader(true));
-        fetch(APP_APIS.OFFERS).then((res) => res.json()).then((response) => {
-            try {
-                let { offers } = response;
-                setOfferList(offers);
+        setTimeout(() => {
+            fetch(APP_APIS.OFFERS).then((res) => res.json()).then((response) => {
                 dispatch(setPageLoader(false));
-            } catch (e) {
+                try {
+                    let { offers } = response;
+                    setOfferList(offers);
+                } catch (e) {
+                    handleError(e);
+                }
+            }).catch(err => {
+                handleError(err);
                 dispatch(setPageLoader(false));
-                handleError(e);
-            }
-        }).catch(err => {
-            handleError(err);
-            dispatch(setPageLoader(false));
-        });
+            });
+        }, 1500);
     }, []);
 
     // UNCOMMENT : (To see the results if the offers API call throws error in the above defined hook)
